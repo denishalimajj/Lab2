@@ -1,0 +1,60 @@
+<div class="login-register">
+    <div class="login-register-panel">
+        <div class="grid" style="width: 100%; height: 100%">
+            <div class="col-6" style="display: flex">
+                <img src="assets/images/login-photo.png" />
+            </div>
+            <div class="col-6 p-5">
+                <h3>Welcome</h3>
+                <h2>Login Page</h2>
+                <form [formGroup]="loginFormGroup">
+                    <div class="grid mt-6">
+                        <div class="col-12">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon"
+                                    ><i class="pi pi-user"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    pInputText
+                                    placeholder="Email"
+                                    formControlName="email"
+                                />
+                            </div>
+                            <small
+                                *ngIf="loginForm.email.invalid && isSubmited"
+                                class="p-error"
+                            >
+                            </small>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon"
+                                    ><i class="pi pi-lock"></i
+                                ></span>
+                                <input
+                                    type="password"
+                                    pInputText
+                                    placeholder="Password"
+                                    formControlName="password"
+                                />
+                            </div>
+                            <small
+                                *ngIf="loginForm.password.invalid && isSubmited"
+                                class="p-error"
+                            >
+                            </small>
+                        </div>
+                        <div class="col-12">
+                            <p-button
+                                label="Login"
+                                styleClass="full-btn"
+                                (onClick)="onLogin()"
+                            ></p-button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
